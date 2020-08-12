@@ -20,6 +20,9 @@ Someday (not any day soon), one might be able to install the released version of
 ``` r
 install.packages("ggconsort")
 ```
+## Website
+A crude pkgdown website is now available at https://higgi13425.github.io/ggconsort/
+
 
 ## Example
 
