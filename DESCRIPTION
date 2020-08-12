@@ -1,5 +1,5 @@
 Package: ggconsort
-Title: What This Package Does
+Title: Creates CONSORT Diagrams for RCTs
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Peter",
@@ -10,7 +10,9 @@ Authors@R:
 Description: Takes the data from a standard status table, 
     which has a row for each patient screened and each 
     participant enrolled, and columns for each change in status,
-    and uses this table to build a CONSORT diagram in ggplot.
+    and uses this table to build a CONSORT diagram in ggplot. 
+    CONSORT diagrams improve the transparency of reporting of
+    randomized, controlled clinical trials.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
