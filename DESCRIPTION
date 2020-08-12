@@ -1,5 +1,5 @@
 Package: ggconsort
-Title: Generates Consort Diagrams
+Title: What This Package Does
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Peter",
