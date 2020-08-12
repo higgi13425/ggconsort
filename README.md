@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of {ggconsort} is to make it easy to create CONSORT diagrams for the transparent reporting of participant allocation in randomized, controlled clinical trials.
+The goal of {ggconsort} is to make it easy to create CONSORT diagrams for the transparent reporting of participant allocation in randomized, controlled clinical trials. This is done by creating a standardized status table, and using this table as the source for the creation of a custom ggplot that creates a standard CONSORT diagram.
 
 ## Installation
 
@@ -15,7 +15,7 @@ library(remotes)
 remotes::github_install("ggconsort")
 ```
 
-Someday, one might be able to install the released version of ggconsort from [CRAN](https://CRAN.R-project.org) with:
+Someday (not any day soon), one might be able to install the released version of ggconsort from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("ggconsort")
