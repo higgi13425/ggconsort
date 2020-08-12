@@ -22,3 +22,6 @@ Suggests:
     testthat,
     spelling
 Language: en-US
+Imports: 
+    ggplot2,
+    dplyr
