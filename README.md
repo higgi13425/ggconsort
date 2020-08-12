@@ -12,7 +12,7 @@ You can install the current version of ggconsort from github with:
 
 ``` r
 library(remotes)
-remotes::github_install("ggconsort")
+remotes::install_github("higgi13425/ggconsort")
 ```
 
 Someday (not any day soon), one might be able to install the released version of ggconsort from [CRAN](https://CRAN.R-project.org) with:
