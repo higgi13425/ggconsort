@@ -1,5 +1,5 @@
 Package: ggconsort
-Title: Generates CONSORT diagrams for randomized clinical trials
+Title: Generates CONSORT Diagrams For Randomized Clinical Trials
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Peter",
