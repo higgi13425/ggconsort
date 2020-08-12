@@ -11,11 +11,14 @@ Description: Takes the data from a standard status table,
     which has a row for each patient screened and each 
     participant enrolled, and columns for each change in status,
     and uses this table to build a CONSORT diagram in ggplot.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/higgi13425/ggconsort
 BugReports: https://github.com/higgi13425/ggconsort/issues
+Suggests: 
+    testthat,
+    spelling
+Language: en-US
