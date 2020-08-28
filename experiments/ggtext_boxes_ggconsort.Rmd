@@ -1,0 +1,65 @@
+---
+title: "boxes_ggconsort"
+author: "Peter Higgins"
+date: "6/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggtext)
+library(glue)
+```
+
+## Goal
+
+Ideally, to have a function able to insert into geom_textbox() 
+small summary tibbles (2-3 columns by 2-6 rows)
+and to have the textbox sized to the appropriate width and height
+(using information from the initial tibble)
+
+related to, but a bit fancier than, current issue #36 
+
+```{r}
+# Example (can likely be done much more elegantly)
+
+# build a simple table 
+iris %>% 
+  count(Species) %>% 
+  select(n, Species)->
+table
+
+# glue together text into a single variable
+# ideally would auto-extract colnames to do this, rather than manual gluing
+table %>% 
+  mutate(text_f = glue("{n} {Species}<br>")) ->
+table_f # adds column text_f which is glued together with <br>
+
+# count the maximum width in characters
+# subtract 4 for "<br>"
+char_wide <- max(nchar(table_f$text_f)) - 4
+
+# collapse text to a single text string with linebreaks (except for the last line)
+label <- glue_collapse(table_f$text_f) %>% #collapses to single string
+  str_extract(pattern = "^.+(?=<br>$)") #removes the last <br>
+# by extracting everything from the start (^) 
+# up until to the <br> at the end ($)
+# stuff in the parens (?=<br>$) is matched, but not extracted
+
+lines <- str_count(label, "<br>") +1
+
+# set up locations of text boxes
+df <- tibble( label = label,  
+              x = c(0.2, .6), 
+              y = c(0.8, .5))
+
+# plot text boxes, with width in cm related to character count (plus one for spaces)
+ggplot(df) +
+  aes(x, y, label = label) +
+    geom_textbox(width = unit(char_wide*0.2, "cm"),
+                 height = unit(lines*0.56, "cm"),
+                 hjust = 0.5, vjust = 0.5) +
+    xlim(0, 1) + ylim(0, 1)
+
+```

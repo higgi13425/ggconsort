@@ -1,0 +1,58 @@
+---
+title: "lines_arrows"
+author: "Peter Higgins"
+date: "6/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggtext)
+
+```
+
+## Testing Lines and Arrows
+
+### Dataframe for Lines
+
+```{r }
+#set up lines as a dataframe
+lines_df <- tribble(~x, ~y, ~xend, ~yend,
+                    4,5,21,22,
+                    4,2,24,2,
+                    24,2,24,22,
+                    2,5,2,25,
+                    2,25,21,25)
+```
+
+### Dataframe for boxes
+consider doing geom_rect instead to control width, height, and position
+then use geom_text for text
+set up boxes as a dataframe
+
+```{r}
+
+boxes_df <- tribble(~x, ~y,  ~label, ~w, 
+                    2,2,"Text in the<br>Lower Left", 0.01,
+                    21,22,"Text in the<br>Upper Right", 0.06)
+```
+
+### Plotting lines and boxes
+```{r}
+ggplot(boxes_df) +
+  geom_textbox(aes(x = x, y = y, label = label,
+                   width = unit(w, "native"),
+                   hjust = 0, vjust = 0, # location point at lower left of box
+                   halign = 0.5, valign = 0.5), 
+               box.r=unit(0, "pt"),
+               box.padding = unit(c(2, 4, 4, 4), "pt"),
+               height = unit(0.12, "native")) +
+  geom_segment(data = lines_df, aes(x=x, y=y, xend=xend, yend=yend),
+               lineend = "round", linejoin = "round",
+               arrow = arrow(length = unit(0.3, "cm"),
+                             ends = "last", type = "closed"), arrow.fill = "black")
+
+
+```
+
