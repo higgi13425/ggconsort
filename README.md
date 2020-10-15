@@ -15,6 +15,15 @@ library(remotes)
 remotes::install_github("higgi13425/ggconsort")
 ```
 
+**To Do List:**
+1. Store example status_table files as proper *.rda files in a data folder
+2. make 'bad' status_table files (small, ~ 10 rows) that violate some of the rules - wrong names, too many/too few columns, blanks instead of NAs, etc.
+3. create a validate_status_table() function that checks a submitted status table to make sure it can be used, and returns helpful error messages on how to fix the table. 
+4. update validate_status_table() to fix simple things, like automatically fix fuzzy matched column names, case for Yes/YES/yes, change No to NA, convert 1/0 to Yes/NA, etc.
+5. Ben Gerber will try a "diagrammer" branch
+6. fix drawing size for top_tbl
+
+
 Someday (not any day soon), one might be able to install the released version of ggconsort from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
