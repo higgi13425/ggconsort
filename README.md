@@ -16,7 +16,7 @@ remotes::install_github("higgi13425/ggconsort")
 ```
 
 **To Do List:**
-1. Store example status_table files as proper *.rda files in a data folder
+1. Store example status_table files as proper *.rda files in a data folder, as per Chapter 14 of R packages here: https://r-pkgs.org/data.html 
 2. make 'bad' status_table files (small, ~ 10 rows) that violate some of the rules - wrong names, too many/too few columns, blanks instead of NAs, etc.
 3. create a validate_status_table() function that checks a submitted status table to make sure it can be used, and returns helpful error messages on how to fix the table. 
 4. update validate_status_table() to fix simple things, like automatically fix fuzzy matched column names, case for Yes/YES/yes, change No to NA, convert 1/0 to Yes/NA, etc.
