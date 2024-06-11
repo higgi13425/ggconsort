@@ -1,3 +1,13 @@
+NOTE 1: This repo is no longer maintained, as this packge has been superseded by Trvis Gerke's version, which
+can be found at:
+https://github.com/tgerke/ggconsort 
+
+You may also find useful the {consort} package on CRAN here:
+https://cran.r-project.org/web/packages/consort/index.html
+
+If you are doing a manual one-off consort diagram, the guide at Rpubs may still be helpful:
+https://rpubs.com/phiggins/461686
+
 
 # ggconsort <img src='man/figures/logo.png' align="right" height="139" />
 
